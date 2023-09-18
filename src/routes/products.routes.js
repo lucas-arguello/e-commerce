@@ -15,14 +15,17 @@ router.get("/", async (req,res) => {
         const limit = req.query.limit;//creamos el query param "limit".
         
         const limitNum = parseInt(limit);//convertimos a "limit" de string a numero
+
+        
         if(limit){
             //utilizamos el metodo "slice" para obtener una parte del arreglo segun el numero limite que elija el cliente.
-            const prodcutsLimit = products.slice(0,limitNum);
-            res.json(prodcutsLimit);
-
+            const productsLimit = products.slice(0,limitNum);
+            res.json(productsLimit);
+            
            }else{
                //respondemos la peticion enviando el contenido guardado en prodcuts
                res.json(products)
+            
            }
         
 
